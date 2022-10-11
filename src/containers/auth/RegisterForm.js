@@ -14,20 +14,22 @@ const RegisterForm = () => {
 
 
     const onSubmit = e => {
-        console.log("onSubmit->", form);
+        // console.log("onSubmit->", form);
 
         e.preventDefault();
         const {username, password, passwordConfirm} = form;
+        console.log("onSubmit->1111");
         if(password !== passwordConfirm) {
             return;
         }
+        console.log("onSubmit->2222");
         dispatch(register({username, password}));
+        console.log("onSubmit->33333");
     };
 
 
     const onChange = e => {
         const {value, name} = e.target;
-        console.log("onChange->", value, name);
         dispatch(
             changeField({
                 form: 'register',
